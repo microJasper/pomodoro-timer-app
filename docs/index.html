@@ -1,0 +1,175 @@
+<!--
+  index.html
+  Pomodoro Pro — Support Page
+  Static, accessible support page for GitHub Pages or any static host.
+-->
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="app-version" content="1.0 (4)">
+    <title>Pomodoro Pro Support</title>
+    <link rel="stylesheet" href="styles.css">
+    <meta name="description" content="Pomodoro Pro destek sayfası — yardım ve sorun giderme.">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="brand">
+          <img src="./app-icon.svg" alt="Pomodoro Pro" class="app-icon" aria-hidden="true">
+          <div>
+            <h1>Pomodoro Pro Support</h1>
+            <nav aria-label="Breadcrumb">
+              <ul class="breadcrumb">
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+        <div class="header-actions">
+          <button id="lang-toggle" class="btn secondary" aria-pressed="false">EN</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="container" id="main">
+      <section class="intro card">
+        <h2 data-i18n="introTitle">Hızlı Destek</h2>
+        <p data-i18n="introText">Uygulama sürümleri, destek saatleri ve ortalama cevap süresi burada. Genellikle 24-48 saat içinde yanıtlıyoruz.</p>
+        <dl class="meta">
+            <div>
+              <dt data-i18n="supportEmailTitle">Support Email</dt>
+              <dd><button id="copy-email" class="link-like" data-email="support@microjasper.com" data-i18n="supportEmailValue">support@microjasper.com</button></dd>
+            </div>
+            <div>
+              <dt data-i18n="supportHoursTitle">Destek Saatleri</dt>
+              <dd data-i18n="supportHoursValue">Hafta içi 09:00–18:00 (UTC+2)</dd>
+            </div>
+        </dl>
+      </section>
+
+      <section class="card">
+        <h3 data-i18n="troubleshootingTitle">Hızlı Çözümler</h3>
+        <div class="accordion">
+          <details>
+            <summary data-i18n="ts_issue_title">Uygulama açılmıyor / Çöküyor</summary>
+            <ol>
+              <li data-i18n="ts_issue_step1">Kapatıp yeniden başlatın.</li>
+              <li data-i18n="ts_issue_step2">Telefonu yeniden başlatın.</li>
+              <li data-i18n="ts_issue_step3">Uygulamayı güncelleyin (App Store / Play Store).</li>
+              <li data-i18n="ts_issue_step4">Sorun devam ederse kayıtları ekleyerek destek talebi gönderin.</li>
+            </ol>
+          </details>
+          <details>
+            <summary data-i18n="ts_notifications_title">Bildirimler gelmiyor</summary>
+            <ol>
+              <li data-i18n="ts_notifications_step1">Bildirim izinlerini kontrol edin.</li>
+              <li data-i18n="ts_notifications_step2">Uygulama ayarlarında bildirimleri etkinleştirin.</li>
+              <li data-i18n="ts_notifications_step3">Do Not Disturb modunu kapatın.</li>
+            </ol>
+          </details>
+          <details>
+            <summary data-i18n="ts_sync_title">Hesap / senkronizasyon sorunları</summary>
+            <ol>
+              <li data-i18n="ts_sync_step1">İnternet bağlantınızı kontrol edin.</li>
+              <li data-i18n="ts_sync_step2">Hesaptan çıkış yapıp tekrar giriş yapın.</li>
+              <li data-i18n="ts_sync_step3">Gerekirse uygulama verilerini yeniden senkronize edin.</li>
+            </ol>
+          </details>
+          <details>
+            <summary data-i18n="ts_cache_title">Önbellek / reset adımları</summary>
+            <ol>
+              <li data-i18n="ts_cache_step1">Ayarlar → Uygulama → Önbelleği temizle.</li>
+              <li data-i18n="ts_cache_step2">Gerekirse verileri sıfırlayın (uygulama içi yedekleme yapın).</li>
+            </ol>
+          </details>
+        </div>
+      </section>
+
+      <section class="card" id="faq">
+        <h3 data-i18n="faqTitle">SSS</h3>
+        <ul class="faq-list">
+          <li>
+            <strong data-i18n="faq_q1">Soru: Uygulama sürümü nasıl öğrenilir?</strong>
+            <p data-i18n="faq_a1">Cevap: Ayarlar &gt; Hakkında bölümünden uygulama sürümünü görebilirsiniz.</p>
+          </li>
+          <li>
+            <strong data-i18n="faq_q2">Soru: Verilerim yedekleniyor mu?</strong>
+            <p data-i18n="faq_a2">Cevap: Evet, seçtiğiniz senkronizasyon ayarlarına bağlı olarak buluta kaydedilir.</p>
+          </li>
+          <li>
+            <strong data-i18n="faq_q3">Soru: Bildirim sesleri nereden değiştirilir?</strong>
+            <p data-i18n="faq_a3">Cevap: Ayarlar &gt; Bildirimler bölümünden ses seçebilirsiniz.</p>
+          </li>
+          <li>
+            <strong data-i18n="faq_q4">Soru: Uygulama ücretli mi?</strong>
+            <p data-i18n="faq_a4">Cevap: Uygulamanın temel özellikleri ücretsizdir; ekstra özellikler uygulama içi satın alımla gelmektedir.</p>
+          </li>
+        </ul>
+      </section>
+
+      <section class="card" aria-labelledby="contact-heading">
+        <h3 id="contact-heading" data-i18n="contactTitle">İletişim</h3>
+        <form id="support-form" class="support-form" novalidate>
+          <div class="form-grid">
+            <label for="name" data-i18n-label="nameLabel">İsim <span class="required">*</span>
+              <input id="name" name="name" type="text" required aria-required="true" data-i18n-placeholder="namePlaceholder">
+            </label>
+
+            <label for="email" data-i18n-label="emailLabel">E-posta <span class="required">*</span>
+              <input id="email" name="email" type="email" required aria-required="true" pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$" data-i18n-placeholder="emailPlaceholder">
+            </label>
+
+            <label for="appVersion" data-i18n-label="appVersionLabel">App Version
+              <input id="appVersion" name="appVersion" type="text" readonly>
+            </label>
+
+            <label for="device" data-i18n-label="deviceLabel">Device
+              <input id="device" name="device" type="text" placeholder="e.g. iPhone 12, Android 11" data-i18n-placeholder="devicePlaceholder">
+            </label>
+
+            <label for="subject" data-i18n-label="subjectLabel">Konu <span class="required">*</span>
+              <input id="subject" name="subject" type="text" required aria-required="true" data-i18n-placeholder="subjectPlaceholder">
+            </label>
+
+            <label for="message" data-i18n-label="messageLabel">Mesaj <span class="required">*</span>
+              <textarea id="message" name="message" required aria-required="true" minlength="20" placeholder="Lütfen sorununuzu mümkün olduğunca detaylandırın." data-i18n-placeholder="messagePlaceholder"></textarea>
+            </label>
+
+            <label for="logs" data-i18n-label="logsLabel">Attach Logs (opsiyonel)
+              <input id="logs" name="logs" type="file" accept=".txt,.log,application/json" aria-describedby="file-help">
+              <small id="file-help" data-i18n="fileHelp">Desteklenen: .txt, .log, .json — Maks 10MB</small>
+            </label>
+
+            <label class="consent"><input id="consent" name="consent" type="checkbox" required> <span data-i18n="consentText">Gizlilik Politikası'nı okudum ve kabul ediyorum.</span></label>
+          </div>
+
+          <div class="form-actions">
+            <input type="hidden" name="_subject" value="[Pomodoro Pro Support]">
+            <button type="submit" class="btn primary">Gönder</button>
+            <button type="button" id="mail-fallback" class="btn secondary">E‑posta ile gönder</button>
+          </div>
+
+          <div id="form-status" class="form-status" role="status" aria-live="polite"></div>
+        </form>
+      </section>
+
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+            <div>
+          <p>&copy; Pomodoro Pro</p>
+          <p><a href="#" data-i18n="privacyLink">Privacy Policy</a> · <a href="#" data-i18n="appStoreLink">App Store</a></p>
+        </div>
+        <div>
+          <p data-i18n="footerSupport">Support: <button id="footer-copy-email" class="link-like" data-email="support@microjasper.com" data-i18n="supportEmailValue">support@microjasper.com</button></p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js" type="module"></script>
+  </body>
+</html>
