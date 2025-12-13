@@ -1,0 +1,51 @@
+<!--
+  thank-you.html
+  Simple accessible thank-you page for successful support submissions.
+-->
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Teşekkürler — Pomodoro Pro</title>
+    <link rel="stylesheet" href="styles.css">
+    <meta name="description" content="Teşekkürler — talebiniz alındı.">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="brand">
+          <img src="./app-icon.png" alt="Pomodoro Pro" class="app-icon" aria-hidden="true">
+          <div>
+            <h1 data-i18n="ty_title">Teşekkürler</h1>
+          </div>
+        </div>
+        <div class="header-actions">
+          <button id="ty-lang-toggle" class="btn secondary" aria-pressed="false">EN</button>
+        </div>
+      </div>
+    </header>
+
+    <main role="main" class="container thank-you" id="main">
+      <div class="card">
+        <h2 id="ty-heading" data-i18n="ty_heading">Talebiniz alındı.</h2>
+        <p id="ty-p" data-i18n="ty_text">Destek ekibimiz en kısa sürede sizinle iletişime geçecektir.</p>
+        <p>
+          <a href="index.html" class="btn secondary" data-i18n="ty_back">Destek sayfasına dön</a>
+        </p>
+      </div>
+    </main>
+
+    <script>
+      // minimal i18n for thank-you page
+      const DICT = {
+        tr: { ty_title: 'Teşekkürler', ty_heading: 'Talebiniz alındı.', ty_text: 'Destek ekibimiz en kısa sürede sizinle iletişime geçecektir.', ty_back: 'Destek sayfasına dön' },
+        en: { ty_title: 'Thank you', ty_heading: 'Your request was received.', ty_text: 'Our support team will contact you shortly.', ty_back: 'Back to Support' }
+      };
+      let lang = 'tr';
+      function setLang(l){ lang = l; document.documentElement.lang = l; Object.keys(DICT[l]).forEach(k=>{ const el = document.querySelector('[data-i18n="'+k+'"]'); if(el) el.textContent = DICT[l][k]; }); document.getElementById('ty-lang-toggle').textContent = (lang==='en')? 'TR':'EN'; }
+      document.getElementById('ty-lang-toggle').addEventListener('click', ()=> setLang(lang==='tr'? 'en':'tr'));
+      document.addEventListener('DOMContentLoaded', ()=> setLang('tr'));
+    </script>
+  </body>
+</html>

@@ -1,3 +1,4 @@
+
 name: pomodoro_timer_app
 description: "A new Flutter project."
 # The following line prevents the package from being accidentally published to
@@ -16,10 +17,10 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
 # In Windows, build-name is used as the major, minor, and patch parts
 # of the product and file versions while build-number is used as the build suffix.
-version: 1.0.0+1
+version: 1.0.0+4
 
 environment:
-  sdk: ^3.9.2
+  sdk: '>=3.3.3 <4.0.0' # SDK versiyonunu güncelleyelim
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -34,9 +35,19 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
+  shared_preferences: ^2.2.3 # Versiyonu güncel tutalım
+  google_fonts: ^6.2.1      # Versiyonu güncel tutalım
+  audioplayers: ^6.0.0       # Versiyonu güncel tutalım
+  sqflite: ^2.4.2
+  path_provider: ^2.1.5
+  fl_chart: ^1.1.1
+  intl: ^0.20.2
+  uuid: ^4.5.2
 
 dev_dependencies:
   flutter_test:
+    sdk: flutter
+  integration_test:
     sdk: flutter
 
   # The "flutter_lints" package below contains a set of recommended lints to
@@ -44,7 +55,8 @@ dev_dependencies:
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
-  flutter_lints: ^5.0.0
+  flutter_lints: ^4.0.0 # Versiyonu güncel tutalım
+  flutter_launcher_icons: ^0.14.4
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -56,6 +68,10 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
+
+  # Assets bölümünü buraya ekliyoruz (TEK BİR flutter: bloğu altında)
+  assets:
+    - assets/sounds/ # Ses dosyalarımızın olduğu klasörü tanıtıyoruz
 
   # To add assets to your application, add an assets section, like this:
   # assets:
@@ -87,3 +103,11 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/icon.png"
+  remove_alpha_ios: true
+  adaptive_icon_background: "#2C3E50"
+  adaptive_icon_foreground: "assets/images/icon.png"
